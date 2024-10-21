@@ -40,7 +40,8 @@ module.exports = Application({
       // 生成邮箱的 MD5 哈希值
       const md5Hash = await generateMD5(mail.trim().toLowerCase());
       // 返回 Gravatar 头像链接
-      return 'https://gravatar.loli.net/avatar/' + md5Hash;
+      // return 'https://gravatar.loli.net/avatar/' + md5Hash;
+      return 'https://cn.cravatar.com/avatar/' + md5Hash;
     }
   },
 
