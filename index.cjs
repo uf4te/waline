@@ -1,4 +1,15 @@
 const Application = require('@waline/vercel');
+const crypto = require('crypto'); // 将 crypto 模块放在最顶部
+
+// 用于生成邮箱的 MD5 哈希值的函数
+function generateMD5(email) {
+    return new Promise((resolve, reject) => {
+        const hash = crypto.createHash('md5');
+        hash.update(email);
+        resolve(hash.digest('hex'));
+    });
+}
+
 
 module.exports = Application({
   plugins: [],
@@ -6,16 +17,6 @@ module.exports = Application({
     // do what ever you want after comment saved
   },
 
-
-// 用于生成邮箱的 MD5 哈希值的函数
-function generateMD5(email) {
-    return new Promise((resolve, reject) => {
-        const crypto = require('crypto');  // 需要 Node.js 内置的 crypto 模块
-        const hash = crypto.createHash('md5');
-        hash.update(email);
-        resolve(hash.digest('hex'));
-    });
-}
 
   /*
 此方法或传入一个 comment 对象，你可以通过 comment.mail 获取邮箱。若返回值为 string 类型，则会直接调用返回值作为头像地址，否则正常生成 MD5。
