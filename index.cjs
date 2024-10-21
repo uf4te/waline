@@ -22,6 +22,13 @@ module.exports = Application({
 此方法或传入一个 comment 对象，你可以通过 comment.mail 获取邮箱。若返回值为 string 类型，则会直接调用返回值作为头像地址，否则正常生成 MD5。
 */
 async avatarUrl(comment) {
+    const mail = comment.mail;
+
+    // 检查是否填写邮箱，若未填写，则不处理头像
+    if (!mail || mail.trim() === '') {
+      return null;  // 未填写邮箱，返回 null
+    }
+    
     const reg = new RegExp('(\\d+)@qq\\.com$', 'i');
     const mail = comment.mail;
 
