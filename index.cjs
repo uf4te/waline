@@ -1,5 +1,6 @@
 const Application = require('@waline/vercel');
 const crypto = require('crypto'); // 将 crypto 模块放在最顶部
+const LinkInterceptor = require('waline-link-interceptor'); // 跳转中间页
 
 // 用于生成邮箱的 MD5 哈希值的函数
 function generateMD5(email) {
