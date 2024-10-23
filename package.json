@@ -4,5 +4,6 @@
   "private": true,
   "dependencies": {
     "@waline/vercel": "latest"
+    "waline-link-interceptor": "^0.1.2"
   }
 }
