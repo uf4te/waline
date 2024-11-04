@@ -20,8 +20,12 @@ module.exports = Application({
       // blackList: [],
       // interceptorTemplate: `hello __URL__ `,   // 如果下面自定义了跳转地址，那么此处模板不生效
       redirectUrl: "https://www.uf4te.cn/go.html", // 填写中间页的具体 html 地址。
-      encodeFunc: (url) =>{
-        return "target="+ Buffer.from(url).toString('base64');                               // 填入一个外链 url 的 base64
+      encodeFunc: (url) => {
+        // 仅在 URL 不包含 redirectUrl 时进行编码
+        if (!url.includes(redirectUrl)) {
+          return "target=" + Buffer.from(url).toString('base64'); // 填入一个外链 url 的 base64
+        }
+        return "target=" + url; // 如果包含 redirectUrl，直接返回原 URL
       }
     })
   ],
