@@ -15,7 +15,7 @@ module.exports = Application({
   plugins: [
       LinkInterceptor({
       whiteList: [
-        'uf4te.cn', 'uf4te.github.io'
+        'uf4te.cn'
       ],
       // blackList: [],
       // interceptorTemplate: `hello __URL__ `,   // 如果下面自定义了跳转地址，那么此处模板不生效
