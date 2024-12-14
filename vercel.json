@@ -18,19 +18,19 @@
   
   "headers": [
     {
-      "source": "/(.*)",  // 匹配所有路径
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://www.uf4te.cn"  // 允许来自 https://www.uf4te.cn 的跨域请求
+          "value": "https://www.uf4te.cn"
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"  // 允许的 HTTP 方法
+          "value": "GET, POST, OPTIONS"
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"  // 允许的请求头
+          "value": "Content-Type, Authorization"
         }
       ]
     }
