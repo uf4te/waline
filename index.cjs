@@ -13,7 +13,7 @@ function generateMD5(email) {
 
 module.exports = Application({
     // 设置违禁词
-    forbiddenWords:["clash", "Clash", "shadowrocket", "Shadowrocket", "ShadowRocket", "v2ray", "V2ray", "机场", "梯子", "三克油", "思密达", "雁过留毛", "免费节点", "多谢分享", "谢谢分享"],
+    forbiddenWords:["clash", "Clash", "shadowrocket", "Shadowrocket", "ShadowRocket", "v2ray", "V2ray", "机场", "梯子", "三克油", "思密达", "雁过留毛", "人过留名", "免费节点", "多谢分享", "谢谢分享"],
     
     plugins: [
       LinkInterceptor({
