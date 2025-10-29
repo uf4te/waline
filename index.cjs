@@ -12,7 +12,10 @@ function generateMD5(email) {
 }
 
 module.exports = Application({
-  plugins: [
+    // 设置违禁词
+    forbiddenWords:["clash", "Clash", "机场", "三克油思密达", "雁过留毛", "免费节点", "多谢分享", "谢谢分享"],
+    
+    plugins: [
       LinkInterceptor({
       whiteList: [
         'uf4te.cn', 'uf4te.github.io'
@@ -31,8 +34,7 @@ module.exports = Application({
     // do what ever you want after comment saved
   },
 
-  
-
+    
   /*
   此方法会传入一个 comment 对象，你可以通过 comment.mail 获取邮箱。若返回值为 string 类型，则会直接调用返回值作为头像地址，否则正常生成 MD5。
   */
