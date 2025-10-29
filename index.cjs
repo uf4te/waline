@@ -31,6 +31,8 @@ module.exports = Application({
     // do what ever you want after comment saved
   },
 
+  forbiddenWords:["clash", "Clash", "CLASH", "机场"， "三克油思密达", "雁过留声", "尼玛"， "节点", "免费"],
+
   /*
   此方法会传入一个 comment 对象，你可以通过 comment.mail 获取邮箱。若返回值为 string 类型，则会直接调用返回值作为头像地址，否则正常生成 MD5。
   */
